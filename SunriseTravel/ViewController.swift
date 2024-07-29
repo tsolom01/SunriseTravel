@@ -25,7 +25,7 @@ extension ViewController {
         stackView.spacing = 20
         
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Welcome"
+        label.text = "Hello world"
         label.font = UIFont.preferredFont(forTextStyle: .title1)
     }
     
