@@ -14,6 +14,9 @@
 		8F123B192C57996A009B5366 /* locations.json in Resources */ = {isa = PBXBuildFile; fileRef = 8F123B172C57996A009B5366 /* locations.json */; };
 		8F123B1A2C57996A009B5366 /* tips.json in Resources */ = {isa = PBXBuildFile; fileRef = 8F123B182C57996A009B5366 /* tips.json */; };
 		8F123B1C2C579983009B5366 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F123B1B2C579983009B5366 /* Assets.xcassets */; };
+		8F123B212C57AA18009B5366 /* TravelCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F123B202C57AA18009B5366 /* TravelCardViewController.swift */; };
+		8F2B3D622C58562900D3957D /* TravelCardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2B3D612C58562900D3957D /* TravelCardData.swift */; };
+		8F2B3D652C5857D200D3957D /* Utils+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2B3D642C5857D200D3957D /* Utils+JSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		8F123B172C57996A009B5366 /* locations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = locations.json; sourceTree = "<group>"; };
 		8F123B182C57996A009B5366 /* tips.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tips.json; sourceTree = "<group>"; };
 		8F123B1B2C579983009B5366 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8F123B202C57AA18009B5366 /* TravelCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelCardViewController.swift; sourceTree = "<group>"; };
+		8F2B3D612C58562900D3957D /* TravelCardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelCardData.swift; sourceTree = "<group>"; };
+		8F2B3D642C5857D200D3957D /* Utils+JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Utils+JSON.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,8 @@
 		8F123B012C57972C009B5366 /* SunriseTravel */ = {
 			isa = PBXGroup;
 			children = (
+				8F2B3D632C5857BD00D3957D /* Utils */,
+				8F123B1F2C57A9C7009B5366 /* TravelCard */,
 				8F123B162C579774009B5366 /* Files */,
 				8F123B022C57972C009B5366 /* AppDelegate.swift */,
 				8F123B062C57972C009B5366 /* ViewController.swift */,
@@ -76,6 +84,23 @@
 				8F123B102C57972D009B5366 /* Info.plist */,
 			);
 			name = Files;
+			sourceTree = "<group>";
+		};
+		8F123B1F2C57A9C7009B5366 /* TravelCard */ = {
+			isa = PBXGroup;
+			children = (
+				8F123B202C57AA18009B5366 /* TravelCardViewController.swift */,
+				8F2B3D612C58562900D3957D /* TravelCardData.swift */,
+			);
+			path = TravelCard;
+			sourceTree = "<group>";
+		};
+		8F2B3D632C5857BD00D3957D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8F2B3D642C5857D200D3957D /* Utils+JSON.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,7 +176,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F2B3D652C5857D200D3957D /* Utils+JSON.swift in Sources */,
 				8F123B072C57972C009B5366 /* ViewController.swift in Sources */,
+				8F2B3D622C58562900D3957D /* TravelCardData.swift in Sources */,
+				8F123B212C57AA18009B5366 /* TravelCardViewController.swift in Sources */,
 				8F123B032C57972C009B5366 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
