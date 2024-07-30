@@ -14,7 +14,8 @@ class TravelCardView: UIView {
     let countryLabel = UILabel()
     let countryFlag = UIImageView()
     
-    
+    var onButtonTap: (() -> Void)?
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         style()
@@ -122,6 +123,6 @@ extension TravelCardView {
     }
     
     @objc func buttonTapped() {
-        print("Hello, World!")
+        onButtonTap?()
     }
 }

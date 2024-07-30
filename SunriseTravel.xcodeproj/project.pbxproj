@@ -17,6 +17,7 @@
 		8F123B212C57AA18009B5366 /* TravelCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F123B202C57AA18009B5366 /* TravelCardViewController.swift */; };
 		8F2B3D622C58562900D3957D /* TravelCardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2B3D612C58562900D3957D /* TravelCardData.swift */; };
 		8F2B3D652C5857D200D3957D /* Utils+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2B3D642C5857D200D3957D /* Utils+JSON.swift */; };
+		8F9DDF602C58F2E4007D8238 /* DestinationsInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9DDF5F2C58F2E4007D8238 /* DestinationsInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		8F123B202C57AA18009B5366 /* TravelCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelCardViewController.swift; sourceTree = "<group>"; };
 		8F2B3D612C58562900D3957D /* TravelCardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelCardData.swift; sourceTree = "<group>"; };
 		8F2B3D642C5857D200D3957D /* Utils+JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Utils+JSON.swift"; sourceTree = "<group>"; };
+		8F9DDF5F2C58F2E4007D8238 /* DestinationsInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationsInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 		8F123B012C57972C009B5366 /* SunriseTravel */ = {
 			isa = PBXGroup;
 			children = (
+				8F9DDF5E2C58F2BD007D8238 /* DestinationsInfo */,
 				8F2B3D632C5857BD00D3957D /* Utils */,
 				8F123B1F2C57A9C7009B5366 /* TravelCard */,
 				8F123B162C579774009B5366 /* Files */,
@@ -101,6 +104,14 @@
 				8F2B3D642C5857D200D3957D /* Utils+JSON.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		8F9DDF5E2C58F2BD007D8238 /* DestinationsInfo */ = {
+			isa = PBXGroup;
+			children = (
+				8F9DDF5F2C58F2E4007D8238 /* DestinationsInfoViewController.swift */,
+			);
+			path = DestinationsInfo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,6 +192,7 @@
 				8F2B3D622C58562900D3957D /* TravelCardData.swift in Sources */,
 				8F123B212C57AA18009B5366 /* TravelCardViewController.swift in Sources */,
 				8F123B032C57972C009B5366 /* AppDelegate.swift in Sources */,
+				8F9DDF602C58F2E4007D8238 /* DestinationsInfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
