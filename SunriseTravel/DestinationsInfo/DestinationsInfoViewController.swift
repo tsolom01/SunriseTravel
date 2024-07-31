@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import MapKit
 
 class DestinationsInfoViewController: UIViewController {
     var data: TravelCardData?
@@ -24,7 +25,6 @@ class DestinationsInfoViewController: UIViewController {
     let leftArrowImageView = UIImageView()
     let rightArrowImageView = UIImageView()
     let imageView = UIImageView()
-    
     
     let descriptionLabel = UILabel()
     let learnMoreButton = UIButton()
@@ -159,6 +159,7 @@ extension DestinationsInfoViewController {
         viewMapButton.configuration = config
         viewMapButton.titleLabel?.numberOfLines = 0
         viewMapButton.titleLabel?.textAlignment = .center
+        viewMapButton.addTarget(self, action: #selector(openMap), for: .touchUpInside)
         
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -267,15 +268,32 @@ extension DestinationsInfoViewController {
         learnMoreLabel.isHidden = false
         learnMoreButton.isHidden = true
         advisoryLabelTopConstraint?.isActive = false
-            
-            advisoryLabelTopConstraint = advisoryLabel.topAnchor.constraint(equalToSystemSpacingBelow: learnMoreLabel.bottomAnchor, multiplier: 1)
-            
-            // Activate the new constraint
-            advisoryLabelTopConstraint?.isActive = true
-            
-            // Optionally, update the scroll view layout
-            UIView.animate(withDuration: 0.3) {
-                self.view.layoutIfNeeded()
-            }
+        
+        advisoryLabelTopConstraint = advisoryLabel.topAnchor.constraint(equalToSystemSpacingBelow: learnMoreLabel.bottomAnchor, multiplier: 1)
+        
+        // Activate the new constraint
+        advisoryLabelTopConstraint?.isActive = true
+        
+        // Optionally, update the scroll view layout
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    @objc func openMap() {
+        let latitude: CLLocationDegrees = data?.latitude ?? 0
+        let longitude: CLLocationDegrees = data?.longitude ?? 0
+        let regionDistance: CLLocationDistance = 1000
+        let coordinates = CLLocationCoordinate2DMake(latitude, longitude)
+        let regionSpan = MKCoordinateRegion(center: coordinates, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
+        let options : [String: Any] = [
+            MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
+            MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span),
+            MKLaunchOptionsMapTypeKey: MKMapType.satellite.rawValue
+        ]
+        let placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
+        let mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = data?.name
+        mapItem.openInMaps(launchOptions: options)
     }
 }
