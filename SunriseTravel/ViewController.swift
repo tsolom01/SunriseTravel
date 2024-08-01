@@ -17,9 +17,36 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         style()
         layout()
-        if let data = loadJSONData() {
+        configureNavigationBar()
+        if let data = loadJSONLocations() {
             setupTravelCards(with: data)
         }
+    }
+    
+    func configureNavigationBar() {
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = UIColor.systemBlue
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        navigationController?.navigationBar.tintColor = UIColor.white
+
+        let tipsButton = UIButton(type: .system)
+        tipsButton.setImage(UIImage(systemName: "lightbulb")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        tipsButton.setTitle(" Tips", for: .normal)
+        tipsButton.setTitleColor(.white, for: .normal)
+        tipsButton.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+        tipsButton.addTarget(self, action: #selector(navigateToTips), for: .touchUpInside)
+
+        let profileButton = UIBarButtonItem(image: UIImage(systemName: "person.circle"), style: .plain, target: self, action: #selector(navigateToTips))
+        let tipsBarButtonItem = UIBarButtonItem(customView: tipsButton)
+        
+        navigationItem.leftBarButtonItem = profileButton
+        navigationItem.rightBarButtonItem = tipsBarButtonItem
+    }
+    
+    @objc func navigateToTips() {
+        let tipsVC = TipsViewController()
+        navigationController?.pushViewController(tipsVC, animated: true)
     }
     
     func style() {
@@ -75,7 +102,6 @@ class ViewController: UIViewController {
             travelCard.setup(with: data)
             travelCard.onButtonTap = { [weak self] in
                 self?.navigateToDestinationInfo(with: data)
-                print("Testing")
             }
             
             stackView.addArrangedSubview(travelCard)
