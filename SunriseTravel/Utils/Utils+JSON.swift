@@ -6,7 +6,7 @@
 //
 import Foundation
 
-func loadJSONData() -> [TravelCardData]? {
+func loadJSONLocations() -> [TravelCardData]? {
     guard let url = Bundle.main.url(forResource: "locations", withExtension: "json") else {
         return nil
     }
@@ -19,3 +19,18 @@ func loadJSONData() -> [TravelCardData]? {
         return nil
     }
 }
+
+func loadJSONTips() -> [TipsData]? {
+    guard let url = Bundle.main.url(forResource: "tips", withExtension: "json") else {
+        return nil
+    }
+    do {
+        let data = try Data(contentsOf: url)
+        let tipdata = try JSONDecoder().decode([TipsData].self, from: data)
+        return tipdata
+    } catch {
+        print("Failed to load or parse JSON: \(error)")
+        return nil
+    }
+}
+
